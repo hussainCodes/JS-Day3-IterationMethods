@@ -1,6 +1,6 @@
 const numbers = [10, 13, 20, 25, 38, 35, 40];
 
-let numbersGreaterThan25 = numbers.filter((number)=>{
+const numbersGreaterThanOrEqual25 = numbers.filter((number)=>{
 	if (number >= 25){
 	return true;
 	}else{
@@ -8,7 +8,7 @@ let numbersGreaterThan25 = numbers.filter((number)=>{
 	}
 });
 
-let numbersDivisableBy5 = numbers.filter((number)=>{
+const numbersDivisableBy5 = numbers.filter((number)=>{
 	if (number % 5 == 0) {
 	return true;
 	}else{
@@ -16,15 +16,15 @@ let numbersDivisableBy5 = numbers.filter((number)=>{
 }
 });
 
-let numbersSquared = numbers.map((number)=>{
+const numbersSquared = numbers.map((number)=>{
 	return number * number;
 });
 
-let numbersMultipliedBy2 = numbers.map((number)=>{
+const numbersMultipliedBy2 = numbers.map((number)=>{
         return number * 2;
 });
 
-let numbersGreaterThan20 = numbers.filter((number)=>{
+const numbersGreaterThan20 = numbers.filter((number)=>{
    	if(number >= 20){
 	return true;
 	}else{
@@ -32,11 +32,40 @@ let numbersGreaterThan20 = numbers.filter((number)=>{
 	}
 });
 
-let squaredNumbersOver20 = numbersGreaterThan20.map((number)=>{
+const squaredNumbersOver20 = numbersGreaterThan20.map((number)=>{
 	return number * number;
 });
 
-let numbersDivisableBy5Tripled = numbersDivisableBy5.map((number)=>{
+const numbersDivisableBy5Tripled = numbersDivisableBy5.map((number)=>{
 	return number * 3;
 });
 
+
+console.log(numbersGreaterThan25)
+
+
+// Extra Challenge
+
+let devices = ["iPhone","Samsung","Macbook","Dell"];
+
+devices.forEach((device)=>{
+	console.log(device)
+});
+
+let temperatures = [120, 70, 82, 100];
+
+const toCelsius = temperatures.map((temperature)=>{
+	return (temperature-32) * (5/9);
+});
+
+
+const hottestDays = (temperatures, threshold)=>{
+	const tempHigherThanThreshold = temperatures.filter((temp)=>{
+		if (temp>threshold){
+			return true;
+		}else{
+			return false;
+		}
+	});
+	return tempHigherThanThreshold;
+};
